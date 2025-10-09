@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html th:fragment="parent(data,title,script)"
+ lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">Document</title>
+     <!-- add css output file -->
+    <link rel="stylesheet" th:href="@{'./css/output.css'}">
+    <!-- add flowbite file -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+
+     <!-- navbar -->
+    <header  th:replace="~{navbar::navbar}"> </header>
+
+    
+<!-- 
+       <h1>this is base page </h1> -->
+
+       <div th:replace="${data}"></div>
+       
+       <!-- <footer>this is common footer for all </footer> -->
+
+       <script th:replace="${script}"></script>
+       <!-- add flowbite js file -->
+     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- start navbar bar -->
+     
+        <div th:fragment="navbar"> 
+             <nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+        <a th:href=@{/home} class="flex items-center space-x-3 rtl:space-x-reverse">
+             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white ">SCM</span>
+            <img th:src="@{https://images.unsplash.com/photo-1560305527-51dc8ad5a8f8?q=80&w=1257&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D}" class="h-8 rounded-full"  alt="Flowbite Logo" />
+           
+        </a>
+
+        <div class="flex items-center space-x-6 rtl:space-x-reverse">
+           <a th:href="@{/login}" class="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Login</a>
+            <a th:href="@{/signup}" class="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Sign up</a>
+        </div>
+    </div>
+</nav>
+
+<nav class="bg-gray-50 dark:bg-gray-700">
+    <div class="max-w-screen-xl px-4 py-3 mx-auto">
+        <div class="flex items-center">
+            <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
+                <li>
+                    <a th:href="@{/home}" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Home</a>
+                </li>
+                <li>
+                    <a th:href="@{/about}" class="text-gray-900 dark:text-white hover:underline">About</a>
+                </li>
+                <li>
+                    <a th:href="@{/service}" class="text-gray-900 dark:text-white hover:underline">Service</a>
+                </li>
+                <li>
+                    <a th:href="@{contact}" class="text-gray-900 dark:text-white hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>  
+
+</div> 
+
+     <!-- end nav bar -->
+
+</body>
+</html>
