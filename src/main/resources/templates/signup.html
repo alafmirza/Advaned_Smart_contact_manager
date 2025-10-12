@@ -17,44 +17,44 @@
 <!-- card div -->
   <div class="w-full max-w-lg p-4 bg-blue-200 border-t-4 border-b-2 rounded-t-lg border-blue-800 shadow-sm sm:p-6 md:p-8 mt-5">
 <!-- form tag -->
-     <form action=""> 
+     <form th:action="@{/form}"  th:object="${userForm}" method="post"> 
 
       <!-- name -->
 <div class="mb-5">
     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
-    <input type="text" id="name" class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter Name" required />
+    <input th:field="*{name}" type="text" id="name" class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter Name" required />
   </div>
 
   <!-- email -->
    <div class="mb-5">
     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
-    <input type="email" id="email" class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="john@gmail.com" required />
+    <input th:field="*{email}" type="email" id="email" class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="john@gmail.com" required />
   </div>
 
   <!--password -->
   <div class="mb-5">
     <label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">Password</label>
-    <input type="password" id="password" class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter Strong Password" required />
+    <input th:field="*{password}" type="password" id="password" class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter Strong Password" required />
   </div>
   
   <!-- contact -->
   <div class="mb-5">
     <label for="ph" class="block mb-2 text-sm font-medium text-gray-900 ">Conatct</label>
-    <input type="number" id="ph" class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="+91-1800-90-1234" required />
+    <input th:field="*{ph}" type="number" id="ph" class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="+91-1800-90-1234" required />
   </div>
 
   <!-- about -->
 
 <label for="about" class="block mb-2 text-sm font-medium text-gray-900">About</label>
-<textarea id="about" rows="4" class="block p-0 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"></textarea>
+<textarea th:field="*{about}" id="about" rows="4" class="block p-0 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"></textarea>
 
 <!-- buttons -->
 <div id="button" class="flex justify-center gap-6 mt-2">
   <!-- signup button -->
- <button type="button" class="text-white bg-blue-700 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mt-2.5">Signup</button>
+ <button type="submit" class="text-white bg-blue-700 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mt-2.5">Signup</button>
 
  <!-- rest button -->
-   <button type="button" class="text-white bg-blue-700 hover:bg-blue-00 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mt-2.5">Reset</button>
+   <button type="reset" class="text-white bg-blue-700 hover:bg-blue-00 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mt-2.5">Reset</button>
 </div>
 
 

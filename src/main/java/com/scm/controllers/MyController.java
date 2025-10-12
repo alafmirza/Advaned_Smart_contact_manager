@@ -1,6 +1,11 @@
 package com.scm.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.scm.entities.userForm;
+
 import org.springframework.ui.Model;
 
 
@@ -49,7 +54,19 @@ public class MyController {
       }
 
       @GetMapping("/signup")
-      public String signuphandler(){
+      public String signuphandler(Model model){
+        model.addAttribute("userForm", new userForm());
         return "signup.html";
+      }
+
+      //for sucess page
+      @PostMapping("/form")
+      public String formhandler(@ModelAttribute ("userForm") userForm user){
+        System.out.println(user.getName());
+        System.out.println(user.getEmail());
+        System.out.println(user.getPassword());
+        System.out.println(user.getPh());
+        System.out.println(user.getAbout());
+        return "sucess";
       }
 }
