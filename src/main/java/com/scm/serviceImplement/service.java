@@ -2,16 +2,19 @@ package com.scm.serviceImplement;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.scm.dao.userRepository;
 import com.scm.entities.User;
 import com.scm.helper.RuntimeExceptionThrow;
 import com.scm.servicesMethods.userService;
 
+@Component
 public class service implements userService{
     Logger log = LoggerFactory.getLogger(service.class);
 
@@ -20,6 +23,7 @@ public class service implements userService{
 
     @Override
     public User saveUser(User user) {
+           user.setUserId(UUID.randomUUID().toString());
             return userRepository.save(user);  
     }
 

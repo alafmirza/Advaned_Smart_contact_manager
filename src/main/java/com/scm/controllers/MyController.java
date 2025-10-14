@@ -1,18 +1,22 @@
 package com.scm.controllers;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.scm.entities.Provider;
+import com.scm.entities.User;
 import com.scm.entities.userForm;
+import com.scm.serviceImplement.service;
 
 import org.springframework.ui.Model;
 
-
-
 @Controller
 public class MyController {
-  
+  @Autowired
+  service service;
+
   // index
      @GetMapping("/index")
     public String handler(Model model){
@@ -61,12 +65,16 @@ public class MyController {
 
       //for sucess page
       @PostMapping("/form")
-      public String formhandler(@ModelAttribute ("userForm") userForm user){
-        System.out.println(user.getName());
-        System.out.println(user.getEmail());
-        System.out.println(user.getPassword());
-        System.out.println(user.getPh());
-        System.out.println(user.getAbout());
+      public String formhandler(@ModelAttribute ("userForm") userForm userFo){
+   //convert userform into user
+     User user = new User();
+     user.setName(userFo.getName());
+     user.setEmail(userFo.getEmail());
+     user.setPassword(userFo.getPassword());
+     user.setPh(userFo.getPh());
+     user.setAbout(userFo.getAbout());
+     user.setProvider(Provider.SELF);
+     service.saveUser(user);
         return "sucess";
       }
 }
