@@ -1,4 +1,4 @@
-package com.scm.services;
+package com.scm.servicesMethods;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,10 +19,10 @@ public interface userService {
    User emailUser(String email);
 
    //update
-   Optional<User> updateUser(User user);
+  Optional<User> updateUser(User user);
 
    //delete
-  void deleteUser(String id);
+   void deleteUser(String id);
 
    //userexist by id
    boolean isUserExist(String id);
