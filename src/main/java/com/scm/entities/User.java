@@ -1,11 +1,14 @@
 package com.scm.entities;
 
+import java.lang.ProcessBuilder.Redirect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
@@ -37,6 +40,7 @@ public class User {
     private boolean emailVarified;
     private boolean phVarified;
     @Builder.Default
+    @Enumerated(EnumType.STRING)
     private  Provider provider  = Provider.SELF;
     private  String providerId;
    
