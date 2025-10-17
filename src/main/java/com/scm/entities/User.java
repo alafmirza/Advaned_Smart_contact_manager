@@ -43,7 +43,6 @@ public class User {
     @Enumerated(EnumType.STRING)
     private  Provider provider  = Provider.SELF;
     private  String providerId;
-   
     @Builder.Default
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     private List<Contacts> contatcs = new ArrayList<>();
