@@ -10,7 +10,10 @@ import com.scm.entities.User;
 import com.scm.entities.userForm;
 import com.scm.serviceImplement.service;
 
+import jakarta.validation.Valid;
+
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 
 @Controller
 public class MyController {
@@ -65,7 +68,12 @@ public class MyController {
 
       //for sucess page
       @PostMapping("/form")
-      public String formhandler(@ModelAttribute ("userForm") userForm userFo){
+      public String formhandler(@Valid @ModelAttribute ("userForm") userForm userFo , BindingResult result){
+      //triger errors
+      if(result.hasErrors()){
+        return "/signup";
+      }
+
    //convert userform into user
      User user = new User();
      user.setName(userFo.getName());
