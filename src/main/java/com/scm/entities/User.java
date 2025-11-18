@@ -3,8 +3,6 @@ package com.scm.entities;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
-import org.springframework.boot.context.properties.bind.Name;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
