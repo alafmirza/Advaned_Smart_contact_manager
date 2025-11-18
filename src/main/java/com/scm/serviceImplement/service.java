@@ -7,6 +7,7 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.scm.dao.userRepository;
@@ -20,10 +21,14 @@ public class service implements userService{
 
     @Autowired
      userRepository userRepository;
+    @Autowired
+     PasswordEncoder passwordEncoder;
+
 
     @Override
     public User saveUser(User user) {
            user.setUserId(UUID.randomUUID().toString());
+           user.setPassword(passwordEncoder.encode(user.getPassword()));
             return userRepository.save(user);  
     }
 

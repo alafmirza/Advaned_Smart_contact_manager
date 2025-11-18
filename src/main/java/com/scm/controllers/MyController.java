@@ -39,27 +39,31 @@ public class MyController {
         return "about.html";
       }
 
-
+     //service
      @GetMapping("/service")
       public String servicehandler(){
         return "service.html";
       }
-
+      
+      //home
       @GetMapping("/home")
       public String homehandler(){
         return "home.html";
       }
 
+      //contact
       @GetMapping("/contact")
       public String contacthandler(){
         return "contact.html";
       }
       
+      //login
       @GetMapping("/login")
       public String loginhander() {
         return "login.html";
       }
 
+      //signup
       @GetMapping("/signup")
       public String signuphandler(Model model){
         model.addAttribute("userForm", new userForm());
@@ -84,6 +88,6 @@ public class MyController {
      user.setProvider(Provider.SELF);
      user.setProfile("https://images.unsplash.com/photo-1585972949687-48eff8b879a9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332");
      service.saveUser(user);
-        return "sucess";
+        return "/sucess";
       }
 }

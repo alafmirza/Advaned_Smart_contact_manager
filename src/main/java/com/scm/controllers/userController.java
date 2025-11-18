@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class userController {
  
+    //profile
     @GetMapping("/profile")
     public String profilehandler(){
         return "profile.html";
     }
-
+ 
+    //dashboard
     @GetMapping("/dashboard")
     public String dashboardhandler(){
         return "dashboard.html";
