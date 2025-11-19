@@ -21,14 +21,11 @@ public class service implements userService{
 
     @Autowired
      userRepository userRepository;
-    @Autowired
-     PasswordEncoder passwordEncoder;
 
 
     @Override
     public User saveUser(User user) {
            user.setUserId(UUID.randomUUID().toString());
-           user.setPassword(passwordEncoder.encode(user.getPassword()));
             return userRepository.save(user);  
     }
 

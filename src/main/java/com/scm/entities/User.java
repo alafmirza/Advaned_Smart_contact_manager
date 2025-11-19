@@ -28,7 +28,7 @@ import lombok.Setter;
 @Builder
 
 @Entity
-public class User implements UserDetails {
+public class User {
     @Id
     private String userId;
     @Column(nullable = false)
@@ -55,13 +55,5 @@ public class User implements UserDetails {
     @Builder.Default
     @ElementCollection(fetch = FetchType.EAGER)
     List<String> Roles = new ArrayList<>(); 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        Collection<SimpleGrantedAuthority> simpleGrantedAuthorities = Roles.stream().map(e->new SimpleGrantedAuthority(e)).toList();
-        return simpleGrantedAuthorities;
-    }
-    @Override
-    public String getUsername() {
-      return this.email;
-    }
+
 }
