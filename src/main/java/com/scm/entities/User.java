@@ -51,5 +51,4 @@ public class User {
     @Builder.Default
     @ElementCollection(fetch = FetchType.EAGER)
     List<String> Roles = new ArrayList<>(); 
-
 }
